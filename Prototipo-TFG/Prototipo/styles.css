@@ -1,0 +1,355 @@
+/* =========================================================
+   Prototipo TFG - Concienciación en ciberseguridad
+   Archivo: styles.css
+   Descripción: estilos visuales de la interfaz del prototipo
+   ========================================================= */
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #1f4f8b;
+    --color-primary-dark: #163a66;
+    --color-secondary: #eef4fb;
+    --color-background: #f4f6f8;
+    --color-card: #ffffff;
+    --color-text: #1f2933;
+    --color-muted: #5f6b7a;
+    --color-border: #d7dee8;
+    --color-success: #1f7a4d;
+    --color-warning: #9a6b00;
+    --color-danger: #a63a3a;
+    --shadow-soft: 0 10px 30px rgba(31, 41, 51, 0.08);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(100% - 32px, 980px);
+    margin: 0 auto;
+}
+
+/* Cabecera */
+.site-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #ffffff;
+    padding: 42px 0 38px;
+    margin-bottom: 32px;
+}
+
+.tagline {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    font-weight: 700;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.site-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.subtitle {
+    max-width: 760px;
+    font-size: 1.05rem;
+    opacity: 0.92;
+}
+
+/* Tarjetas principales */
+.card {
+    display: none;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.card.active {
+    display: block;
+}
+
+.card h2 {
+    font-size: 1.7rem;
+    margin-bottom: 18px;
+    color: var(--color-primary-dark);
+}
+
+.card p {
+    margin-bottom: 16px;
+}
+
+/* Bloques informativos de la pantalla inicial */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.info-box {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    text-align: center;
+}
+
+.info-box strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.info-box span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* Botones */
+button {
+    font: inherit;
+}
+
+.primary-button,
+.secondary-button,
+.option-button {
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.primary-button {
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 13px 22px;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(31, 79, 139, 0.22);
+}
+
+.primary-button:hover,
+.primary-button:focus {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background: #e8edf3;
+    color: var(--color-text);
+    padding: 13px 22px;
+    font-weight: 700;
+}
+
+.secondary-button:hover,
+.secondary-button:focus {
+    background: #dce4ee;
+    transform: translateY(-1px);
+}
+
+/* Progreso */
+.progress-wrapper {
+    margin-bottom: 26px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5eaf0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* Escenarios */
+.risk-label {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.scenario-description {
+    font-size: 1.03rem;
+    margin-bottom: 24px;
+    white-space: pre-line;
+}
+
+.options-container {
+    display: grid;
+    gap: 14px;
+}
+
+.option-button {
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 16px 18px;
+    line-height: 1.5;
+}
+
+.option-button:hover,
+.option-button:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 18px rgba(31, 79, 139, 0.12);
+    transform: translateY(-1px);
+}
+
+.option-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+/* Retroalimentación */
+.feedback-result {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 7px 13px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.feedback-result.optimal {
+    background: rgba(31, 122, 77, 0.12);
+    color: var(--color-success);
+}
+
+.feedback-result.partial {
+    background: rgba(154, 107, 0, 0.13);
+    color: var(--color-warning);
+}
+
+.feedback-result.unsafe {
+    background: rgba(166, 58, 58, 0.12);
+    color: var(--color-danger);
+}
+
+.feedback-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin: 24px 0;
+    font-weight: 700;
+}
+
+/* Resultado final */
+.final-score-box {
+    background: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.final-score-box span {
+    display: block;
+    color: var(--color-muted);
+    margin-bottom: 8px;
+}
+
+.final-score-box strong {
+    display: block;
+    color: var(--color-primary-dark);
+    font-size: 2.4rem;
+}
+
+.final-message {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.final-actions {
+    margin-top: 24px;
+}
+
+/* Pie de página */
+.site-footer {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    padding: 10px 0 34px;
+}
+
+/* Accesibilidad visual del foco */
+button:focus-visible {
+    outline: 3px solid rgba(31, 79, 139, 0.35);
+    outline-offset: 3px;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 720px) {
+    .site-header {
+        padding: 32px 0;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-info,
+    .feedback-summary {
+        flex-direction: column;
+    }
+
+    .option-letter {
+        margin-bottom: 6px;
+    }
+}
